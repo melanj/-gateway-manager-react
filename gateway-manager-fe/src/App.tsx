@@ -7,18 +7,12 @@ import {GatewayDetails} from "./components/GatewayDetails";
 import {DeviceAdd} from './components/DeviceAdd';
 import {Login} from "./components/Login";
 import {Logout} from "./components/Logout";
-import {CssBaseline, Link} from '@mui/material';
+import Navbar from "./components/Navbar";
 
 function App() {
     return (
-        <React.Fragment>
-            <CssBaseline />
-            <Link href="/">Home</Link>
-            <Link href="/gateways/new">Add Gateway</Link>
-            <Link href="/devices/new">Add Device</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/logout">LogOut</Link>
             <Router>
+                <Navbar />
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/gateways/new' element={<GatewayAdd/>}/>
@@ -29,7 +23,6 @@ function App() {
                     <Route path='/logout' element={<Logout/>}/>
                 </Routes>
             </Router>
-        </React.Fragment>
     );
 }
 
